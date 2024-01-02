@@ -3,6 +3,7 @@ import { ProductRepository } from "../repositories/product-repository";
 import { Either, left, right } from "@/core/either";
 import { Injectable } from "@nestjs/common";
 import { NotAllowedError } from "@/core/errors/errors/not-allowed-error";
+import { ResourceNotFoundError } from "@/core/errors/errors/resource-not-found-error";
 
 interface EditProductUseCaseRequest {
   id: string;
@@ -13,7 +14,7 @@ interface EditProductUseCaseRequest {
 }
 
 type EditProductUseCaseResponse = Either<
-  NotAllowedError,
+  ResourceNotFoundError,
   {
     product: Product;
   }
@@ -33,7 +34,7 @@ export class EditProductUseCase {
     const product = await this.productRepository.findById(id);
 
     if (!product) {
-      return left(new NotAllowedError());
+      return left(new ResourceNotFoundError());
     }
 
     product.name = name;

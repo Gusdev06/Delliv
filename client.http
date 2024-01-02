@@ -7,8 +7,10 @@ Content-Type: application/json
 
 {
   "name": "Diego Fernandes",
-  "email": "diego@rocketseat.com.br",
-  "password": "123456"
+  "email": "diega@rocketseat.com.br",
+  "password": "123456",
+  "address": "rua 1"
+
 }
 
 ###
@@ -18,25 +20,54 @@ POST {{baseUrl}}/sessions
 Content-Type: application/json
 
 {
-  "email": "diego@rocketseat.com.br",
+  "email": "diega@rocketseat.com.br",
   "password": "123456"
 }
 
 ###
 
-# @name create_question
-POST {{baseUrl}}/questions
+
+
+POST {{baseUrl}}/orders
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-  "title": "Nova pergunta 2",
-  "content": "Teste"
+
+  "total": 0,
+  "itens": [
+    {
+      "productId": "aeda25be-7a4f-4748-bb3a-42c67fbc9a5e",
+      "quantity": 3
+    }
+  ]
 }
 
 ###
 
-# @name fetch_recent_questions
-GET {{baseUrl}}/questions?page=1
+GET {{baseUrl}}/orders
+content-type: application/json
+Authorization: Bearer {{authToken}}
+
+###
+
+PUT {{baseUrl}}/orders/a0c15170-da92-4384-b860-7ebc16a5f55a/status
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
+
+{
+  "status": "READY"
+}
+###
+
+POST {{baseUrl}}/products
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "name": "Produto 1",
+  "price": 10,
+  "category": "Categoria 1",
+  "description": "Descrição do produto 1"
+}
+

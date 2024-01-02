@@ -1,5 +1,6 @@
+import { makeProduct } from "@/test/factories/make-product";
 import { FetchProductsUseCase } from "./fetch-products";
-import { makeProduct } from "@/test/factories/make-question";
+
 import { InMemoryProductRepository } from "@/test/repositories/in-memory-product-repository";
 
 let inMemoryProductRepository: InMemoryProductRepository;

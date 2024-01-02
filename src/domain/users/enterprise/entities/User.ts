@@ -5,6 +5,8 @@ export interface UserProps {
   name: string;
   email: string;
   password: string;
+  role: string;
+  address: string;
 }
 
 export class User extends Entity<UserProps> {
@@ -12,8 +14,20 @@ export class User extends Entity<UserProps> {
     return this.props.name;
   }
 
+  get role() {
+    return this.props.role;
+  }
+
+  set role(role: string) {
+    this.props.role = role;
+  }
+
   get email() {
     return this.props.email;
+  }
+
+  get address() {
+    return this.props.address;
   }
 
   get password() {

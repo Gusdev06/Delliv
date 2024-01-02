@@ -20,6 +20,7 @@ describe("Register User", () => {
       name: "John Doe",
       email: "johndoe@example.com",
       password: "123456",
+      address: "Rua 1",
     });
 
     expect(result.isRight()).toBe(true);
@@ -33,6 +34,7 @@ describe("Register User", () => {
       name: "John Doe",
       email: "johndoe@example.com",
       password: "123456",
+      address: "Rua 1",
     });
 
     const hashedPassword = await fakeHasher.hash("123456");

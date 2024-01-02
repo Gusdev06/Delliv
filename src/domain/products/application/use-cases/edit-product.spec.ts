@@ -1,7 +1,7 @@
 import { EditProductUseCase } from "./edit-product";
 
-import { makeProduct } from "@/test/factories/make-question";
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
+import { makeProduct } from "@/test/factories/make-product";
 import { InMemoryProductRepository } from "@/test/repositories/in-memory-product-repository";
 
 let inMemoryProductsRepository: InMemoryProductRepository;

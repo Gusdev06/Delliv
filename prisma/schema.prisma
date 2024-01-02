@@ -8,13 +8,67 @@ datasource db {
 }
 
 model Product {
-  id          Int         @id @default(autoincrement())
-  guid        String      @unique @default(uuid())
+  id          String      @unique @default(uuid())
   name        String
   description String
   price       Float
   category    String
   createdAt   DateTime
   updatedAt   DateTime
+  OrderItem   OrderItem[]
+}
 
+model User {
+  id        String    @unique @default(uuid())
+  name      String
+  email     String
+  password  String
+  isActive  Boolean   @default(true)
+  role      UserRole  @default(USER)
+  address   String
+  createdAt DateTime?
+  updatedAt DateTime?
+  Order     Order[]
+
+  @@map("users")
+}
+
+model Order {
+  id        String      @unique @default(uuid())
+  userId    String
+  user      User        @relation(fields: [userId], references: [id])
+  createdAt DateTime
+  updatedAt DateTime
+  total     Float
+  status    OrderStatus @default(PREPARING)
+  itens     OrderItem[]
+
+  @@map("orders")
+}
+
+model OrderItem {
+  Id        String   @unique @default(uuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  quantity  Int
+  price     Float
+  createdAt DateTime
+  updatedAt DateTime
+  Order     Order    @relation(fields: [orderId], references: [id])
+  orderId   String
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PREPARING
+  READY
+  DELIVERING
+  DELIVERED
+  CANCELLED
+}
+
+enum UserRole {
+  ADMIN
+  USER
 }

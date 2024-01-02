@@ -15,6 +15,7 @@ type AuthenticateUserUseCaseResponse = Either<
   WrongCredentialsError,
   {
     accessToken: string;
+    role: string | undefined;
   }
 >;
 
@@ -31,7 +32,6 @@ export class AuthenticateUserUseCase {
     password,
   }: AuthenticateUserUseCaseRequest): Promise<AuthenticateUserUseCaseResponse> {
     const user = await this.usersRepository.findByEmail(email);
-
     if (!user) {
       return left(new WrongCredentialsError());
     }
@@ -47,10 +47,12 @@ export class AuthenticateUserUseCase {
 
     const accessToken = await this.encrypter.encrypt({
       sub: user.id.toString(),
+      role: user.role,
     });
 
     return right({
       accessToken,
+      role: user.role,
     });
   }
 }
