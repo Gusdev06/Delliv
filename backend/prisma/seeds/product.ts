@@ -86,4 +86,48 @@ export const seedProduct = async (prisma: PrismaClient) => {
       updatedAt: new Date(),
     },
   });
+
+  await prisma.product.create({
+    data: {
+      name: "Agua",
+      description: "Agua mineral",
+      category: "Bebidas",
+      price: 3.0,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  });
+
+  await prisma.product.create({
+    data: {
+      name: "Batata Frita",
+      description: "Batata frita",
+      category: "Porcoes",
+      price: 10.0,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  });
+
+  await prisma.product.create({
+    data: {
+      name: "Onion Rings",
+      description: "Onion Rings",
+      category: "Porcoes",
+      price: 10.0,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  });
+
+  await prisma.product.create({
+    data: {
+      name: "Nuggets",
+      description: "Nuggets de frango",
+      category: "Porcoes",
+      price: 10.0,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  });
 };

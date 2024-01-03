@@ -21,7 +21,7 @@ describe("Edit Order Use Case", () => {
         id: "1",
         name: "John Doe",
         email: "  ",
-        adress: " ",
+        address: " ",
       },
       total: 0,
     });

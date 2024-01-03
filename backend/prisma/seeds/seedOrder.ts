@@ -13,7 +13,6 @@ export const seedOrder = async (prisma: PrismaClient) => {
     throw new Error("Usuários ou produtos não encontrados para criar pedidos.");
   }
 
-  // Itens do pedido
   const orderItems = [
     {
       productId: products[0].id,
@@ -25,13 +24,46 @@ export const seedOrder = async (prisma: PrismaClient) => {
       quantity: 1,
       price: products[1].price,
     },
+    {
+      productId: products[2].id,
+      quantity: 1,
+      price: products[2].price,
+    },
+
+    {
+      productId: products[3].id,
+      quantity: 1,
+      price: products[3].price,
+    },
+
+    {
+      productId: products[4].id,
+      quantity: 1,
+      price: products[4].price,
+    },
   ];
 
-  // Calculando o total do pedido
   const total = orderItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
   );
+
+  await prisma.order.create({
+    data: {
+      userId: users[0].id,
+      status: "PENDING",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
 
   await prisma.order.create({
     data: {
