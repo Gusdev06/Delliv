@@ -5,8 +5,25 @@ services:
     container_name: delliv
     image: postgres
     ports:
-      - 5432:5432
+      - "5432:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: docker
       POSTGRES_DB: delliv
+
+  react-app:
+    container_name: react-app
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+  nestjs-server:
+    container_name: nestjs-server
+    build: ./backend
+    ports:
+      - "3333:3333"
+    depends_on:
+      - postgres
+    command: npm run start:dev

@@ -17,16 +17,16 @@ export const seedUser = async (prisma: PrismaClient) => {
     await prisma.user.deleteMany();
   }
 
-  const hashedPasswordUser = await bcrypt.hash("Delliv123@", 10);
-  const hashedPasswordAdmin = await bcrypt.hash("Delliv123@", 10);
+  const hashedPasswordUser = await bcrypt.hash("123456", 10);
+  const hashedPasswordAdmin = await bcrypt.hash("123456", 10);
 
   await prisma.user.create({
     data: {
       email: "usuario@delliv.com",
-      name: "Nome do Usuário",
+      name: "Gustavo Gomes",
       password: hashedPasswordUser,
       role: "USER",
-      address: "Rua do Usuário, 123",
+      address: "Rua João Urizzi	Parque Olimpico	Mogi das Cruzes/SP	08746-170",
       createdAt: new Date(),
     },
   });
@@ -34,7 +34,7 @@ export const seedUser = async (prisma: PrismaClient) => {
   await prisma.user.create({
     data: {
       email: "admin@delliv.com",
-      name: "Nome do Admin",
+      name: "Gustavo Admin",
       password: hashedPasswordAdmin,
       role: "ADMIN",
       address: "Rua do admin, 123",

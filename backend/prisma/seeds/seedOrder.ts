@@ -21,7 +21,7 @@ export const seedOrder = async (prisma: PrismaClient) => {
     },
     {
       productId: products[1].id,
-      quantity: 1,
+      quantity: 3,
       price: products[1].price,
     },
     {
@@ -38,8 +38,32 @@ export const seedOrder = async (prisma: PrismaClient) => {
 
     {
       productId: products[4].id,
-      quantity: 1,
+      quantity: 4,
       price: products[4].price,
+    },
+
+    {
+      productId: products[5].id,
+      quantity: 1,
+      price: products[5].price,
+    },
+
+    {
+      productId: products[6].id,
+      quantity: 1,
+      price: products[6].price,
+    },
+
+    {
+      productId: products[7].id,
+      quantity: 1,
+      price: products[7].price,
+    },
+
+    {
+      productId: products[8].id,
+      quantity: 1,
+      price: products[8].price,
     },
   ];
 
@@ -68,6 +92,227 @@ export const seedOrder = async (prisma: PrismaClient) => {
   await prisma.order.create({
     data: {
       userId: users[0].id,
+      status: "PENDING",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
+
+  await prisma.order.create({
+    data: {
+      userId: users[1].id,
+      status: "PREPARING",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
+
+  await prisma.order.create({
+    data: {
+      userId: users[0].id,
+      status: "PREPARING",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
+
+  await prisma.order.create({
+    data: {
+      userId: users[0].id,
+      status: "READY",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
+
+  await prisma.order.create({
+    data: {
+      userId: users[1].id,
+      status: "READY",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
+
+  await prisma.order.create({
+    data: {
+      userId: users[0].id,
+      status: "DELIVERED",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
+
+  await prisma.order.create({
+    data: {
+      userId: users[0].id,
+      status: "DELIVERED",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
+
+  await prisma.order.create({
+    data: {
+      userId: users[1].id,
+      status: "DELIVERING",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
+
+  await prisma.order.create({
+    data: {
+      userId: users[0].id,
+      status: "DELIVERING",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
+
+  await prisma.order.create({
+    data: {
+      userId: users[0].id,
+      status: "CANCELLED",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
+
+  await prisma.order.create({
+    data: {
+      userId: users[1].id,
+      status: "CANCELLED",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
+
+  await prisma.order.create({
+    data: {
+      userId: users[0].id,
+      status: "PENDING",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
+
+  await prisma.order.create({
+    data: {
+      userId: users[0].id,
+      status: "PENDING",
+      total: total,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      itens: {
+        create: orderItems.map((item) => ({
+          ...item,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        })),
+      },
+    },
+  });
+
+  await prisma.order.create({
+    data: {
+      userId: users[1].id,
       status: "PENDING",
       total: total,
       createdAt: new Date(),

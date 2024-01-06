@@ -6,10 +6,10 @@ POST {{baseUrl}}/accounts
 Content-Type: application/json
 
 {
-  "name": "Diego Fernandes",
-  "email": "diega@rocketseat.com.br",
-  "password": "123456",
-  "address": "rua 1"
+  "name": "Gustavo Gomes",
+  "email": "gustavo@delliv.com.br",
+  "password": "12345678",
+  "address": "rua joao urizzi 421"
 
 }
 
@@ -20,8 +20,8 @@ POST {{baseUrl}}/sessions
 Content-Type: application/json
 
 {
-  "email": "diega@rocketseat.com.br",
-  "password": "123456"
+  "email": "gustavo@delliv.com.br",
+  "password": "12345678"
 }
 
 ###
@@ -36,16 +36,17 @@ Authorization: Bearer {{authToken}}
 
   "total": 0,
   "itens": [
+
     {
-      "productId": "aeda25be-7a4f-4748-bb3a-42c67fbc9a5e",
-      "quantity": 3
+      "productId": "839453b5-80ad-42d9-9a2b-ab60898e68a0",
+      "quantity": 5
     }
   ]
 }
 
 ###
 
-GET {{baseUrl}}/orders
+GET {{baseUrl}}/products
 content-type: application/json
 Authorization: Bearer {{authToken}}
 

@@ -106,7 +106,7 @@ export class Order extends AggregateRoot<IOrderProps> {
 
   public recalculateTotal() {
     this.props.total = this.props.itens.reduce(
-      (sum, item) => sum + (item.product?.price ?? 0) * item.quantity,
+      (total, item) => total + item.quantity * item.price,
       0
     );
   }
