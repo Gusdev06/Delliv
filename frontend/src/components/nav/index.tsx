@@ -6,7 +6,6 @@ import {
   OrderHistoryIcon,
   ProductIcon,
 } from "./styles";
-import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -14,15 +13,15 @@ const Nav = () => {
       <NavList>
         <NavItem>
           <HomeIcon />
-          <Link to="/admin">Home</Link>
+          <a href="/admin">Home</a>
         </NavItem>
         <NavItem>
           <OrderHistoryIcon />
-          <Link to="/admin/order-history">Order history</Link>
+          <a href="/admin/order-history">Order history</a>
         </NavItem>
         <NavItem>
           <ProductIcon />
-          <Link to="products">Products</Link>
+          <a href="#">Products</a>
         </NavItem>
       </NavList>
     </Container>

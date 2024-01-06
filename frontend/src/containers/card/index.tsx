@@ -69,8 +69,16 @@ const OrderCard = ({ order }: Props) => {
         <div>
           {orderStatus === "PENDING" ? (
             <>
-              <ButtonAcept order={order} onStatusChange={handleStatusChange} />
-              <ButtonReject order={order} onStatusChange={handleStatusChange} />
+              <ButtonAcept
+                data-testid="button-accept"
+                order={order}
+                onStatusChange={handleStatusChange}
+              />
+              <ButtonReject
+                data-testid="button-reject"
+                order={order}
+                onStatusChange={handleStatusChange}
+              />
             </>
           ) : orderStatus === "PREPARING" ? (
             <>

@@ -3,6 +3,7 @@ import Login from "../pages/login";
 import PrivateRoute from "./private-route";
 import OrderHistory from "../pages/admin/order-history";
 import Home from "../pages/admin/home";
+import LogoutButton from "../components/buttons/logout";
 
 const Rotas = () => (
   <Routes>
@@ -14,6 +15,7 @@ const Rotas = () => (
     <Route path="/admin" element={<PrivateRoute roleRequired="ADMIN" />}>
       <Route path="" element={<Home />}></Route>
       <Route path="order-history" element={<OrderHistory />}></Route>
+      <Route path="products" element={<Products />}></Route>
     </Route>
   </Routes>
 );
@@ -21,9 +23,18 @@ const Rotas = () => (
 export default Rotas;
 
 const PrivatePage = () => {
-  return <div>User Page</div>;
+  return (
+    <>
+      <h1>USER PAGE</h1>
+      <LogoutButton />
+    </>
+  );
 };
 
 const Unauthorized = () => {
   return <div>Unauthorized</div>;
+};
+
+const Products = () => {
+  return <div>Products</div>;
 };

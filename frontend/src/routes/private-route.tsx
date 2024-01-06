@@ -13,7 +13,7 @@ const PrivateRoute = ({ roleRequired }: PrivateRouteProps) => {
   }
 
   if (role !== roleRequired) {
-    return <Navigate to="/unauthorized" />;
+    return <Navigate to="/login" />;
   }
 
   return <Outlet />;

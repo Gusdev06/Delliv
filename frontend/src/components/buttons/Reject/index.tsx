@@ -1,6 +1,7 @@
 import * as S from "./styles";
 import { useUpdateOrderStatusMutation } from "../../../services/api";
 import Order from "../../../models";
+import { toast } from "react-toastify";
 
 export type OnStatusChange = (status: string) => void;
 
@@ -9,7 +10,7 @@ type Props = {
   onStatusChange: OnStatusChange;
 };
 
-const ButtonReject: React.FC<Props> = ({ order, onStatusChange }) => {
+const ButtonReject: React.FC<Props> = ({ order, onStatusChange, ...props }) => {
   const [updateOrderStatus] = useUpdateOrderStatusMutation();
 
   const handleAccept = async () => {
@@ -20,13 +21,26 @@ const ButtonReject: React.FC<Props> = ({ order, onStatusChange }) => {
         orderId: order.id,
         status: "CANCELLED",
       }).unwrap();
+      toast.error(
+        `"Status do pedido #${order.id.slice(0, 6)} alterado para: CANCELLED"`,
+        {
+          position: "top-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        }
+      );
     } catch (error) {
       console.error("Erro ao atualizar o status do pedido", error);
     }
   };
 
   return (
-    <S.Reject onClick={handleAccept}>
+    <S.Reject onClick={handleAccept} {...props}>
       <S.IConReject />
     </S.Reject>
   );

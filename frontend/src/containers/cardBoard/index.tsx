@@ -19,6 +19,7 @@ const OrdersBoard: React.FC<OrdersBoardProps> = ({ orders }) => {
   const orderStatuses = [
     "PENDING",
     "PREPARING",
+    "READY",
     "DELIVERING",
     "DELIVERED",
     "CANCELLED",

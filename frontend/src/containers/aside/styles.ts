@@ -17,7 +17,7 @@ export const AsideStyle = styled.aside`
   padding: 32px 16px;
   height: 100vh;
   border-right: 1px solid ${colors.gray};
-  width: 100%; /* Aqui garantimos que o aside use a largura definida no Container */
+  width: 100%;
   h1 {
     text-align: center;
     font-weight: bold;

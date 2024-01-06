@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import LogoutButton from "../../components/buttons/logout";
 import Nav from "../../components/nav";
 import { AsideStyle, Container } from "./styles";
@@ -10,6 +11,18 @@ const Aside = () => {
         <Nav />
         <LogoutButton />
       </AsideStyle>
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </Container>
   );
 };

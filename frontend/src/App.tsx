@@ -1,7 +1,8 @@
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
+import "react-toastify/dist/ReactToastify.css";
 import { GlobalCss } from "./styles";
-import { store, persistor } from "./store"; // Certifique-se de importar o persistor também
+import { store, persistor } from "./store";
 import { BrowserRouter } from "react-router-dom";
 import Rotas from "./routes/routes";
 
