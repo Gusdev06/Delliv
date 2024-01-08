@@ -50,7 +50,7 @@ v1.0.0
 
 ## Configurando variáveis de ambiente
 
-Copie o arquivo .env.example e renomeie para .env. Este arquivo contém as variáveis de ambiente necessárias para o projeto. Preencha as informações de acordo com a sua configuração.
+na pasta do backend copie o arquivo .env.example e renomeie para .env. Este arquivo contém as variáveis de ambiente necessárias para o projeto. Preencha as informações de acordo com a sua configuração.
 
 Exemplo do conteúdo de .env.example:
 
@@ -73,7 +73,7 @@ Para rodar o projeto em um container docker, basta rodar o comando: `docker-comp
 
 ### Gerando esquema do Prisma e criando estrutura no banco
 
-Para gerar o esquema do Prisma assim como a estrutura no banco de dados, basta rodar o comando:
+Entre na pasta ./backend para gerar o esquema do Prisma assim como a estrutura no banco de dados, basta rodar o comando:
 
 `npx prisma db push`
 
@@ -88,7 +88,7 @@ Com o prisma eu criei alguns seeders para que o banco de dados ja venha com algu
 
 ## Rodando o projeto
 
-Para rodar o projeto utilize o script `npm run start:dev` dentro da pasta ./backend e o script `npm run dev` dentro da pasta ./frontend
+Para rodar o projeto utilize o script `npm run start:dev` dentro da pasta ./backend, o frontend esta rodando na porta 3000 ( http://localhost:3000 )
 
 ---
 
