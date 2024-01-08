@@ -13,6 +13,7 @@ import { RegisterUserUseCase } from "@/domain/users/application/use-cases/regist
 
 import { Public } from "@/infra/auth/public";
 import { UserAlreadyExistsError } from "@/domain/users/application/use-cases/errors/user-already-exists.error";
+import { ApiBody, ApiTags } from "@nestjs/swagger";
 
 const createAccountBodySchema = z.object({
   name: z.string(),
