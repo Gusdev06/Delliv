@@ -88,9 +88,14 @@ Com o prisma eu criei alguns seeders para que o banco de dados ja venha com algu
 
 ## Rodando o projeto
 
-Para rodar o projeto utilize o script `npm run start:dev` dentro da pasta ./backend, o frontend esta rodando na porta 3000 ( http://localhost:3000 )
+Para rodar o projeto utilize o script `npm run start:dev` dentro da pasta ./backend, o frontend ja estara rodando na porta 3000 ( http://localhost:3000 )
 
 ---
+
+#LOGIN
+ 
+admin: admin@delliv.com : 123456
+usuario: usuario@delliv.com : 123456
 
 ## Testes com jest
 
