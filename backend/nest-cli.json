@@ -4,15 +4,6 @@
   "sourceRoot": "src",
   "entryFile": "infra/main",
   "compilerOptions": {
-    "deleteOutDir": true,
-    "plugins": [
-      {
-        "name": "@nestjs/swagger",
-        "options": {
-          "classValidatorShim": false,
-          "introspectComments": true
-        }
-      }
-    ]
+    "deleteOutDir": true
   }
 }

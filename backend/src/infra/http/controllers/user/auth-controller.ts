@@ -12,7 +12,6 @@ import { z } from "zod";
 import { Public } from "@/infra/auth/public";
 import { AuthenticateUserUseCase } from "@/domain/users/application/use-cases/authenticate-user";
 import { WrongCredentialsError } from "@/domain/users/application/use-cases/errors/wrong-credentials-error";
-import { ApiTags } from "@nestjs/swagger";
 
 const authenticateBodySchema = z.object({
   email: z.string().email(),
