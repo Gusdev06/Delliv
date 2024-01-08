@@ -38,7 +38,7 @@ Authorization: Bearer {{authToken}}
   "itens": [
 
     {
-      "productId": "839453b5-80ad-42d9-9a2b-ab60898e68a0",
+      "productId": "idDoProduto",
       "quantity": 5
     }
   ]
@@ -52,7 +52,7 @@ Authorization: Bearer {{authToken}}
 
 ###
 
-PUT {{baseUrl}}/orders/a0c15170-da92-4384-b860-7ebc16a5f55a/status
+PUT {{baseUrl}}/orders/idDoPedido/status
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
