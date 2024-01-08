@@ -44,9 +44,9 @@ v1.0.0
 
 
 
-- npm run install:all na raiz do projeto, esse comando ira instalar as depencendias do frontend e do backend,
+- `npm run install:all` na raiz do projeto, esse comando ira instalar as depencendias do frontend e do backend,
 
-- caso queira instalar separadamente pode tambem rodar o comando: npm run install:frontend ou npm run install:backend.
+- caso queira instalar separadamente pode tambem rodar o comando: `npm run install:frontend`  ou `npm run install:backend` .
 
 ## Configurando variáveis de ambiente
 
