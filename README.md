@@ -1,4 +1,3 @@
-
 # Delliv
 
 
@@ -14,20 +13,13 @@ v1.0.0
 
 - <a href="#rodar">Como rodar este projeto?</a>
 
-- <a href="#estrutura">Estrutura do projeto </a>
-
-- <a href="#metodologias">Metodologias </a>
-
-- <a href="#autenticacao">Autenticação</a>
-
-- <a href="#terminar">Proximos passos</a>
 
 ## Funcionalidades
 
 - [x] Cadastro de usuarios
 - [x] Autenticação de usuario
 - [x] Cadastro e listagem de produtos
-- [x] Fazer pedido
+- [x] realizar pedido
 
 ## Tecnologias 
  
@@ -36,7 +28,8 @@ v1.0.0
 3. [TypeScript](https://www.typescriptlang.org/)
 4. [PrismaORM](https://www.prisma.io/)
 5. [JWT (JSON Web Tokens)](https://jwt.io/)
-6. [Docker](https://www.docker.com)
+6. [Jest](https://jestjs.io/pt-BR/)
+7. [Docker](https://www.docker.com)
 
 
 ## Rodar
@@ -47,7 +40,13 @@ v1.0.0
 
 
 
-O projeto está utilizando o package manager 'npm' para lidar com os pacotes no node, sendo assim, para baixar as dependencias do projeto basta rodar o comando: npm run install:all na raiz do projeto, esse comando ira instalar as depencendias do frontend e do backend, caso queira instalar separadamente pode tambem rodar o comando: npm run install:frontend ou npm run install:backend.
+### O projeto está utilizando o package manager 'npm' para lidar com os pacotes no node, sendo assim, para baixar as dependencias do projeto basta rodar o comando:
+
+
+
+- npm run install:all na raiz do projeto, esse comando ira instalar as depencendias do frontend e do backend,
+
+- caso queira instalar separadamente pode tambem rodar o comando: npm run install:frontend ou npm run install:backend.
 
 ## Configurando variáveis de ambiente
 
@@ -92,6 +91,10 @@ Com o prisma eu criei alguns seeders para que o banco de dados ja venha com algu
 Para rodar o projeto utilize o script `npm run start:dev` dentro da pasta ./backend e o script `npm run dev` dentro da pasta ./frontend
 
 ---
+
+## Testes com jest
+
+- Para executar os testes separadamente pode entrar na raiz de cada stack e executar o comando npm test 
 
  
 
